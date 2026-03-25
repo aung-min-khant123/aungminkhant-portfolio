@@ -62,6 +62,7 @@ function Home() {
                 <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-3 border-r-3 border-indigo-400 rounded-br-xl" />
                 <img
                   src="/images/myphoto.png"
+                  loading="lazy"
                   alt="Aung Min Khant"
                   className="w-50 h-50 md:w-65 md:h-65 object-cover rounded-2xl shadow-xl border border-(--text-default)/5"
                 />
