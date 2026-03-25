@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+:root {
+  --bg-default: #ffffff;
+  --text-default: #0f172a; /* slate-900 */
+  --text-muted: #27282a; /* slate-600 */
+  --nav-bg: rgba(255,255,255,0.6);
+}
+
+.dark {
+  --bg-default: #0b1220;
+  --text-default: #e6eef8;
+  --text-muted: #fff;
+  --nav-bg: rgba(7, 7, 7, 0.498);
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg-default);
+  color: var(--text-default);
+}
+
+/* small helper for main content */
+.app-content {
+  padding-top: 80px; /* leave space for fixed navbar */
+}
+
+.list{
+  position: relative;
+}
+.list::after{
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  height: 4px;
+  width: 100%;
+  left: 0;
+  background-color: cyan;
+  transition: 0.3s;
+  transition-timing-function: ease-in-out;
+  transform: scaleX(0);
+  border-radius: 3px;
+}
+.list:hover::after{
+  transform: scaleX(1);
+}
+
+.box1 {
+  background: #142d4a;
+  height: 200px;
+  aspect-ratio: 1 / 1;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+/* custom angle variable */
+@property --deg {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.box1::before,
+.box1::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--deg),
+    #00c3ff,
+    #4d0199,
+    #6300c6,
+    #009dcd,
+    #00c3ff
+  );
+  animation: autoRotate 2s linear infinite;
+  z-index: -1;
+}
+
+/* glow effect */
+.box1::after {
+  filter: blur(12px);
+  opacity: 0.5;
+}
+
+@keyframes autoRotate {
+  to {
+    --deg: 360deg;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
