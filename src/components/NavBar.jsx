@@ -18,7 +18,6 @@ function NavBar() {
         <h1 className="text-md md:text-2xl font-bold text-(--text-default) font-stretch-ultra-expanded animate-bounce">
           Welcome to my portfolio
         </h1>
-
         {/* Desktop Menu */}
         <div className="flex gap-10">
           <ul className="hidden md:flex space-x-8 font-bold font-mono text-(--text-muted) text-lg cursor-grab ">

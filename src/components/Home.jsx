@@ -49,8 +49,9 @@ function Home() {
   return (
     <>
       <main className="flex justify-center">
-        <section 
-            id="home" className="min-h-7/12 flex items-center justify-center
+        <section
+          id="home"
+          className="flex items-center justify-center
     bg-(--bg-default)"
         >
           <div className="max-w-7xl mx-auto px-6 py-16 ">
